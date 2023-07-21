@@ -132,29 +132,46 @@ function getPasswordOptions() {
       passwordSpecial
     )
       alert("You are all set!");
+    //if none: log: You have not selected a character type. please start again!
     else alert("You haven't selected a character type. Please try again!");
-
-    //if none: log: You have not selected a character type. please refresh to start again!
   }
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandom(arr) {
+  randomNum = Math.floor(Math.random() * arr.length);
+  return arr[randomNum];
+}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  //create an array with the selected elements
+  getPasswordOptions();
+  let charArray = [];
+
+  if (passwordUppercase) charArray = charArray.concat(upperCasedCharacters);
+  if (passwordLowercase) charArray = charArray.concat(lowerCasedCharacters);
+  if (passwordNumeric) charArray = charArray.concat(numericCharacters);
+  if (passwordSpecial) charArray = charArray.concat(specialCharacters);
+
+  //create an array to store password
+  let passwordArr = [];
+  //iterate through the array and pick random number to fill each position of the selected length
+  for (let i = 0; i < passwordLength; i++) {
+    passwordArr[i] = getRandom(charArray);
+  }
+  return passwordArr.toString();
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = generatePassword();
 }
 
 // Add event listener to generate button
-// generateBtn.addEventListener('click', writePassword);
-generateBtn.addEventListener("click", getPasswordOptions);
+generateBtn.addEventListener("click", writePassword);
