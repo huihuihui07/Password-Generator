@@ -2,7 +2,7 @@
 
 ## Description
 
-<img alt="portfolio website screenshot" src="./assets/Screenshot.jpg>
+<img alt="portfolio website screenshot" src="./assets/Screenshot.jpg">
 
 
 - The app generates a random password for the user.
