@@ -1,9 +1,9 @@
 # W5-Password-Generator
 
 ## Description
-<p align="center">
+
 <img alt="portfolio website screenshot" src="./assets/Screenshot.jpg>
-</p>
+
 
 - The app generates a random password for the user.
 - The app presents a set of prompt to determine the user's request to include which character type.
