@@ -12,5 +12,5 @@
 
 ## Installation
 No installation is required. 
-Deployed link: https://huihuihui07.github.io/W5-Password-Generator/
+Deployed link: https://huihuihui07.github.io/Password-Generator/
 
